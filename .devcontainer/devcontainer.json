@@ -9,7 +9,6 @@
       "extensions": [
         "vscjava.vscode-java-pack",
         "vscjava.vscode-maven",
-        "vscjava.vscode-gradle",
         "GitHub.copilot",
         "GitHub.copilot-chat"
       ],
@@ -25,6 +24,7 @@
       }
     }
   },
-  "postCreateCommand": "java -version && mvn -version && gradle -version",
+  "forwardPorts": [8080],
+  "postCreateCommand": "java -version && mvn -version",
   "remoteUser": "vscode"
 }
