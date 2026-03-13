@@ -1,0 +1,30 @@
+{
+  "name": "Java 17 Codespace",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-maven",
+        "GitHub.copilot",
+        "GitHub.copilot-chat"
+      ],
+      "settings": {
+        "java.configuration.runtimes": [
+          {
+            "name": "JavaSE-17",
+            "path": "/usr/lib/jvm/msopenjdk-current",
+            "default": true
+          }
+        ],
+        "java.jdt.ls.java.home": "/usr/lib/jvm/msopenjdk-current"
+      }
+    }
+  },
+  "forwardPorts": [8080],
+  "postCreateCommand": "java -version && mvn -version",
+  "remoteUser": "vscode"
+}
